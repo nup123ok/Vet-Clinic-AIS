@@ -1,0 +1,58 @@
+﻿<Window x:Class="Vet_Clinic_AIS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vet_Clinic_AIS"
+        mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        Style="{StaticResource {x:Type Window}}"
+       Title="Vet Clinic AIS" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1" Background="#ff6d00"></Grid>
+        <Menu Grid.Row="0" Background="#ff6d00">
+            <MenuItem Header="File" FontFamily="Mistral" FontSize="20" >
+                <MenuItem Header="Настройки" Background="{StaticResource Color.Background.Focus}"  FontFamily="Mistral" FontSize="19" />
+                <MenuItem Header="Отчеты" Background="{StaticResource Color.Background.Focus}" FontFamily="Mistral" FontSize="19" />
+                <Separator />
+                <MenuItem Header="Выход" Background="{StaticResource Color.Background.Focus}" FontFamily="Mistral" FontSize="19"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Заголовок и логотип -->
+
+
+        <!-- Верхнее меню -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Navigation Panel -->
+            <StackPanel Grid.Column="0" Background="#FFF9E9C7" Width="150">
+                <Image Source="567fb502288607699bd67a16b5ea43a0.png" Width="70" Height="51" HorizontalAlignment="Center"  />
+                <TextBlock Text="Здоровая Лапка" FontSize="20" FontFamily="Mistral"  HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                <Button Content="Приемы" Margin="10" Padding="1" Click="pr_btn" FontFamily="Mistral" FontSize="20"/>
+                <Button Content="Клиенты" Margin="10" Padding="1" Click="cl_btn" FontFamily="Mistral" FontSize="20"/>
+                <Button Content="Пациенты" Margin="10" Padding="1" Click="pa_btn" FontFamily="Mistral" FontSize="20"/>
+                <Button Content="Процедуры" Margin="10" Padding="1" Click="protsedure_btn" FontFamily="Mistral" FontSize="20"/>
+                <Button Content="Пользователи" Margin="10" Padding="1" Click="role_btn" FontFamily="Mistral" FontSize="20"/>
+             <Button Content="Профиль" Margin="10" Padding="1" Click="prof_btn" FontFamily="Mistral" FontSize="20"/>
+               
+            </StackPanel>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Column="1">
+
+                <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" ></Frame>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

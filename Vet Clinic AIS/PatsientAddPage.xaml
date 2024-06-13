@@ -1,0 +1,58 @@
+﻿<Page x:Class="Vet_Clinic_AIS.PatsientAddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Vet_Clinic_AIS"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PatsientAddPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Имя:" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center" FontSize="14"></TextBlock>
+        <TextBlock Text="Вид:" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center" FontSize="14"></TextBlock>
+        <TextBlock Text="День рождение:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center" FontSize="14"></TextBlock>
+        <TextBlock Text="Пол:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center" FontSize="14"></TextBlock>
+        <TextBlock Text="Хозяин(ы):" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center" FontSize="14"></TextBlock>
+        <TextBox Text="{Binding Name}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="14" Width="300" Name="txtName" TextChanged="txtName_TextChanged" Height="30"></TextBox>
+        <TextBox Text="{Binding AnimalType}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="14" Width="300" Name="txttype" TextChanged="txtType_TextChanged" Height="30"></TextBox>
+        <DatePicker Text="{Binding Date}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="14" Width="300" Name="dtDate" Height="30"/>
+        <ComboBox SelectedItem="{Binding Gender}" FontSize="14" Grid.Row="3" Grid.Column="1" Width="300" x:Name="cmbgender" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30">
+            <ComboBoxItem>Самец</ComboBoxItem>
+            <ComboBoxItem>Самка</ComboBoxItem>
+            <ComboBoxItem>Гермафродит</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="clientComboBox1" Height="30" IsEditable="True" IsTextSearchEnabled="True" TextSearch.TextPath="FirstName" FontSize="14" Grid.Row="4" Grid.Column="1" Width="300"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FirstName}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="clientComboBox2" Height="30" IsEditable="True" IsTextSearchEnabled="True" TextSearch.TextPath="FirstName" FontSize="14" Grid.Row="5" Grid.Column="1" Width="300"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FirstName}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" >
+            <Button Content="Отмена" Height="35" Margin="15" Width="200" Name="Back" Click="Back_Click" />
+            <Button Content="Сохранить" Height="35" Margin="15" Width="200" Name="Add" Click="Add_Click"/>
+        </StackPanel>
+    
+    </Grid>
+</Page>
